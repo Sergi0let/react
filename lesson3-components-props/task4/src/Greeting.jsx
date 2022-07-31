@@ -3,7 +3,7 @@ import './index.scss';
 
 function Greeting(props) {
   return (
-    <div className="greeting">{`My name is ${props.info.firstName} ${props.info.lastName}. I'm ${props.info.birthDate} years old`}</div>
+    <div className="greeting">{`My name is ${props.firstName} ${props.lastName}. I'm ${props.birthDate} years old`}</div>
   );
 }
 

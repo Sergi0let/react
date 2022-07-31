@@ -7,13 +7,9 @@ import './index.scss';
 
 const rootElement = document.querySelector('#root');
 
-const formatDate = (date) =>
-  moment().format('YYYY') - moment(date).format('2005');
+const formatDate = (date) => moment().format('YYYY') - date;
 
-const userInfo = {
-  firstName: 'Joe',
-  lastName: 'Doe',
-  birthDate: formatDate(),
-};
-
-ReactDOM.render(<Greeting info={userInfo} />, rootElement);
+ReactDOM.render(
+  <Greeting firstName="Joe" lastName="Doe" birthDate={formatDate(2005)} />,
+  rootElement
+);
