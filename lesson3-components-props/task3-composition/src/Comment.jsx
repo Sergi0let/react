@@ -3,6 +3,7 @@ import UserInfo from './UserInfo.jsx';
 import moment from 'moment';
 
 import './comment.scss';
+
 const formatDate = (date) => moment(date).format('DD MMM YYYY');
 
 function Comment(props) {
