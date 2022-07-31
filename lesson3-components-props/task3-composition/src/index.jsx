@@ -7,7 +7,7 @@ import './styles.scss';
 const rootElement = document.querySelector('#root');
 
 const userInfo = {
-  author: 'Tom',
+  name: 'Tom',
   avatarUrl: 'https://avatars1.githubusercontent.com',
 };
 
