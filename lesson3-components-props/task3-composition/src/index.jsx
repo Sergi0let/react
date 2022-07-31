@@ -8,6 +8,7 @@ const rootElement = document.querySelector('#root');
 
 const userInfo = {
   name: 'Tom',
+  author: 'Bob',
   avatarUrl: 'https://avatars1.githubusercontent.com',
 };
 
