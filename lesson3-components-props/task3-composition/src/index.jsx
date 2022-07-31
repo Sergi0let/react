@@ -8,11 +8,11 @@ const rootElement = document.querySelector('#root');
 
 const userInfo = {
   name: 'Tom',
-  author: 'Bob',
+
   avatarUrl: 'https://avatars1.githubusercontent.com',
 };
 
 ReactDOM.render(
-  <Comment user={userInfo} text="Good job!" date={new Date()} />,
+  <Comment author={userInfo} text="Good job!" date={new Date()} />,
   rootElement
 );
