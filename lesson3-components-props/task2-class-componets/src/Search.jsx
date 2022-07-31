@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class SearchField extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="search">
         <h1 className="search__title">
