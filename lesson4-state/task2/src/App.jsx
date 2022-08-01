@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Clock location="New York" offset={12} />
-      <Clock location="Kyiv" offset={0} />
+      <Clock location="Kyiv" offset={5} />
       <Clock location="London" offset={0} />
     </>
   );
