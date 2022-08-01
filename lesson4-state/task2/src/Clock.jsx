@@ -17,7 +17,6 @@ class Clock extends Component {
 
     this.state = {
       offset: props.offset,
-      location: props.location,
     };
 
     setInterval(() => {
@@ -33,7 +32,7 @@ class Clock extends Component {
   render() {
     return (
       <div className="clock">
-        <div className="clock__location">{this.state.location}</div>
+        <div className="clock__location">{this.props.location}</div>
         <div className="clock__time">
           {this.state.hours}:{this.state.minutes}:{this.state.seconds}{' '}
           {this.state.day}
