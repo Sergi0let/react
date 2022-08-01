@@ -21,9 +21,9 @@ class Clock extends Component {
 
     setInterval(() => {
       this.setState({
-        hours: moment(getTimeWithOffset(this.state.offset)).format('HH'),
+        hours: moment(getTimeWithOffset(this.state.offset)).format('H'),
         minutes: moment(getTimeWithOffset(this.state.offset)).format('MM'),
-        seconds: moment(getTimeWithOffset(this.state.offset)).format('SS'),
+        seconds: moment(getTimeWithOffset(this.state.offset)).format('S'),
         day: moment(getTimeWithOffset(this.state.offset)).format('A'),
       });
     }, 1000);
