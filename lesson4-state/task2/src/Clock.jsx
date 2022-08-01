@@ -16,7 +16,7 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      offset: props.offset,
+      offset: props.offset + 1,
     };
 
     setInterval(() => {
