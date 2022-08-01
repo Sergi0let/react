@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Moment from 'moment';
+import moment from 'moment';
 
 import './clock.scss';
-import moment from 'moment';
 
 const getTimeWithOffset = (offset) => {
   const currentTime = new Date();
