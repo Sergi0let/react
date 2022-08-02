@@ -6,9 +6,10 @@ import './clock.scss';
 const getTimeWithOffset = (offset) => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
-  return new Date(
+  const utcTime = new Date(
     currentTime.setHours(currentTime.getHours() + offset + utcOffset)
   );
+  return moment(utcTime).format('LTS');
 };
 
 class Clock extends Component {
@@ -16,12 +17,12 @@ class Clock extends Component {
     super(props);
 
     this.state = {
-      offset: props.offset,
+      offset: props.offset + 1,
     };
 
     setInterval(() => {
       this.setState({
-        time: moment(getTimeWithOffset(this.state.offset)).format('h:mm:ss A'),
+        time: getTimeWithOffset(this.state.offset),
       });
     }, 1000);
   }
