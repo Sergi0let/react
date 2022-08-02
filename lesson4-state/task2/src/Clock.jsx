@@ -21,10 +21,7 @@ class Clock extends Component {
 
     setInterval(() => {
       this.setState({
-        hours: moment(getTimeWithOffset(this.state.offset)).format('h'),
-        minutes: moment(getTimeWithOffset(this.state.offset)).format('mm'),
-        seconds: moment(getTimeWithOffset(this.state.offset)).format('ss'),
-        day: moment(getTimeWithOffset(this.state.offset)).format('A'),
+        time: moment(getTimeWithOffset(this.state.offset)).format('h:mm:ss A'),
       });
     }, 1000);
   }
@@ -33,13 +30,17 @@ class Clock extends Component {
     return (
       <div className="clock">
         <div className="clock__location">{this.props.location}</div>
-        <div className="clock__time">
-          {this.state.hours}:{this.state.minutes}:{this.state.seconds}{' '}
-          {this.state.day}
-        </div>
+        <div className="clock__time">{this.state.time}</div>
       </div>
     );
   }
 }
 
 export default Clock;
+
+// hours: moment(getTimeWithOffset(this.state.offset)).format('h'),
+// minutes: moment(getTimeWithOffset(this.state.offset)).format('mm'),
+// seconds: moment(getTimeWithOffset(this.state.offset)).format('ss'),
+// day: moment(getTimeWithOffset(this.state.offset)).format('A'),
+// {this.state.hours}:{this.state.minutes}:{this.state.seconds}{' '}
+// {this.state.day}
