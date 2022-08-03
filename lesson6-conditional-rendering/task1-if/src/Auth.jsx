@@ -7,33 +7,35 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      onLogin: false,
     };
   }
 
   handleLogin = () => {
     this.setState({
-      isLoggedIn: true,
+      onLogin: true,
     });
   };
 
   handleLogout = () => {
     this.setState({
-      isLoggedIn: false,
+      onLogin: false,
     });
   };
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const onLogin = this.state.onLogin;
+
     let button;
-    if (isLoggedIn) {
+
+    if (onLogin) {
       button = <Logout onClick={this.handleLogout} />;
     } else {
       button = <Login onClick={this.handleLogin} />;
     }
     return (
       <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        <Greeting onLogin={this.state.onLogin} />
         {button}
       </div>
     );
@@ -47,28 +49,28 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      onLogin: false,
     };
   }
 
   handleLogin = () => {
     this.setState({
-      isLoggedIn: true,
+      onLogin: true,
     });
   };
 
   handleLogout = () => {
     this.setState({
-      isLoggedIn: false,
+      onLogin: false,
     });
   };
 
   render() {
     return (
       <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
+        <Greeting onLogin={this.state.onLogin} />
         <div>
-          {this.state.isLoggedIn ? (
+          {this.state.onLogin ? (
             <button className="btn logout" onClick={this.handleLogout}>
               Logout
             </button>

@@ -3,8 +3,8 @@ import UserGreeting from './UserGreeting.jsx';
 import GuestGreeting from './GuestGreeting.jsx';
 
 const Greeting = (props) => {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
+  const onLogin = props.onLogin;
+  if (onLogin) {
     return <UserGreeting />;
   }
   return <GuestGreeting />;
