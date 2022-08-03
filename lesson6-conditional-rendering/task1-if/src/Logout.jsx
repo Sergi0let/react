@@ -3,12 +3,9 @@ import Greeting from './Greeting.jsx';
 
 const Logout = (props) => {
   return (
-    <>
-      <Greeting isLoggedIn />
-      <button className="btn logout" onClick={props.onClick}>
-        Logout
-      </button>
-    </>
+    <button className="btn logout" onClick={props.onClick}>
+      Logout
+    </button>
   );
 };
 
