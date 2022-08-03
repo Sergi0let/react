@@ -33,12 +33,7 @@ class Auth extends Component {
     } else {
       button = <Login onClick={this.handleLogin} />;
     }
-    return (
-      <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {button}
-      </div>
-    );
+    return <div className="panel">{button}</div>;
   }
 }
 

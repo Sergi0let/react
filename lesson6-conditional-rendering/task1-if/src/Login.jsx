@@ -1,10 +1,14 @@
 import React from 'react';
+import Greeting from './Greeting.jsx';
 
 const Login = (props) => {
   return (
-    <button className="btn login" onClick={props.onClick}>
-      Login
-    </button>
+    <>
+      <Greeting />
+      <button className="btn login" onClick={props.onClick}>
+        Login
+      </button>
+    </>
   );
 };
 
