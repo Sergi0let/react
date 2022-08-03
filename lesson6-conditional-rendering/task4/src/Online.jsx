@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Online = (props) => {
+const Online = () => {
   return <span className="status__text">All good!</span>;
 };
 

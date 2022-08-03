@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Offline from './Offline.jsx';
-import Online from './Online.jsx';
 
 class Status extends React.Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class Status extends React.Component {
       isOnline: false,
     };
 
-    console.log(this.state.isOnline);
+    // console.log(this.state.isOnline);
   }
 
   handleOnline = () => {
