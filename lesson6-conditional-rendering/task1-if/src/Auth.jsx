@@ -6,11 +6,11 @@ import Logout from './Logout.jsx';
 class Auth extends Component {
   constructor(props) {
     super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
     this.state = {
       isLoggedIn: false,
     };
-    this.handleLogout = this.handleLogout.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleLogin() {
