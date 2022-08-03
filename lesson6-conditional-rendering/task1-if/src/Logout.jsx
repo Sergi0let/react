@@ -1,5 +1,4 @@
 import React from 'react';
-import Greeting from './Greeting.jsx';
 
 const Logout = (props) => {
   return (

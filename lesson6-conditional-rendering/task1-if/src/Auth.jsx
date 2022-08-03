@@ -13,17 +13,17 @@ class Auth extends Component {
     this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleLogin = () => {
+  handleLogin() {
     this.setState({
       isLoggedIn: true,
     });
-  };
+  }
 
-  handleLogout = () => {
+  handleLogout() {
     this.setState({
       isLoggedIn: false,
     });
-  };
+  }
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
