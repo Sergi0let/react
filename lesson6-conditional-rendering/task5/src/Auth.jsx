@@ -33,9 +33,9 @@ class Auth extends Component {
     }
 
     return this.state.isLoggedIn ? (
-      <Logout onLogout={this.onLogout} />
+      <Logout onClick={this.onLogout} />
     ) : (
-      <Login onLogin={this.onLogin} />
+      <Login onClick={this.onLogin} />
     );
   }
 }
