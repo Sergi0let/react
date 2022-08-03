@@ -3,7 +3,7 @@ import Greeting from './Greeting.jsx';
 
 const Login = (props) => {
   return (
-    <button className="btn login" onClick={props.onClick}>
+    <button className="btn login" onClick={props.onLogin}>
       Login
     </button>
   );
