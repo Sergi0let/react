@@ -7,7 +7,7 @@ class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
     };
   }
 
@@ -25,14 +25,13 @@ class Auth extends Component {
 
   render() {
     const isLoggedIn = this.state.isLoggedIn;
-
     let button;
-
     if (isLoggedIn) {
       button = <Logout onClick={this.handleLogout} />;
     } else {
       button = <Login onClick={this.handleLogin} />;
     }
+
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
