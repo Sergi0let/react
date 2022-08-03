@@ -9,6 +9,8 @@ class Auth extends Component {
     this.state = {
       isLoggedIn: false,
     };
+    this.handleLogout = this.handleLogout.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleLogin = () => {
