@@ -9,6 +9,11 @@ class Life extends Component {
   componentDidMount() {
     console.log('componentDidMount: API calls, subscriptions');
   }
+  componentDidMount() {
+    console.log(
+      'componentDidUpdate(prevProps, prevState): some updates based on new props'
+    );
+  }
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log(
@@ -18,11 +23,11 @@ class Life extends Component {
     return nextProps.number % 2;
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(
-      'componentDidUpdate(prevProps, prevState): some updates based on new props'
-    );
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log(
+  //     'componentDidUpdate(prevProps, prevState): some updates based on new props'
+  //   );
+  // }
 
   componentWillUnmount() {
     console.log(
