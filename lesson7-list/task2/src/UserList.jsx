@@ -15,8 +15,8 @@ class UsersList extends Component {
   };
 
   render() {
-    console.log(this.props.users);
     let usersList;
+
     if (this.state.sorting) {
       usersList = this.props.users
         .slice()
@@ -26,6 +26,7 @@ class UsersList extends Component {
     } else {
       usersList = this.props.users;
     }
+
     return (
       <div>
         <button className="btn" onClick={this.toggleSorting}>
@@ -33,7 +34,7 @@ class UsersList extends Component {
         </button>
         <ul className="users">
           {usersList.map((user) => (
-            <User key={user.id} {...user} />
+            <User key={user.name} {...user} />
           ))}
         </ul>
       </div>
