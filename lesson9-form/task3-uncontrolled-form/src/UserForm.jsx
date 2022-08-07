@@ -19,7 +19,7 @@ class UserForm extends Component {
       <form
         className="login-form"
         ref={this.setRef}
-        onSubmit={this.handleSubmit}
+        onSubmit={() => this.props.onSubmit(this.handleSubmit)}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
