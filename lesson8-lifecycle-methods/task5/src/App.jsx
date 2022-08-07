@@ -1,7 +1,9 @@
 import React from 'react';
 
-const App = () => {
-  return <div>Hello, React!</div>;
-};
+import ConnectionStatus from './ConnectionStatus.jsx';
+
+import './index.scss';
+
+const App = () => <ConnectionStatus />;
 
 export default App;
