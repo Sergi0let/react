@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class UserForm extends Component {
   setFormRef = (node) => {
-    console.log(node);
     this.formRef = node;
   };
 
