@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = [...new FormData(this.formRef)].reduce(
+      (acc, [name, value]) => ({ ...acc, [name]: value }),
+      {}
+    );
+    console.log(formData);
+  };
+
   setRef = (node) => {
     this.formRef = node;
   };
@@ -10,9 +19,9 @@ class UserForm extends Component {
       <form
         className="login-form"
         ref={this.setRef}
-        onSubmit={() =>
-          this.props.onSubmit(Object.fromEntries(new FormData(this.setRef)))
-        }
+        onSubmit={() => {
+          this.props.onSubmit(this.state);
+        }}
       >
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
@@ -58,3 +67,7 @@ class UserForm extends Component {
 }
 
 export default UserForm;
+
+// onSubmit={() =>
+//     this.props.onSubmit(Object.fromEntries(new FormData(this.setRef)))
+//   }
