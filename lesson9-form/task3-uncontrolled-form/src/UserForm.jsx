@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  setFormRef = (node) => {
+  setRef = (node) => {
     console.log(node);
     this.formRef = node;
   };
@@ -9,7 +9,7 @@ class UserForm extends Component {
   render() {
     return (
       <form
-        ref={this.setFormRef}
+        ref={this.setRef}
         className="login-form"
         onSubmit={() => {
           this.props.onSubmit(Object.fromEntries(new FormData(this.formRef)));
