@@ -9,8 +9,8 @@ class UserForm extends Component {
   render() {
     return (
       <form
+        ref={this.setFormRef}
         className="login-form"
-        ref={this.setRef}
         onSubmit={() => {
           this.props.onSubmit(Object.fromEntries(new FormData(this.formRef)));
         }}
