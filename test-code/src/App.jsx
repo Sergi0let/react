@@ -1,8 +1,8 @@
 import React from 'react';
-import Toggler from './Toggler.jsx';
+import ColorPicker from './ColorPicker.jsx';
 
 import './index.scss';
 
-const App = () => <Toggler />;
+const App = () => <ColorPicker />;
 
 export default App;
