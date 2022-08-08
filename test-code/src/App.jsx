@@ -1,8 +1,8 @@
 import React from 'react';
-import Color from './Colors.jsx';
+import Toggler from './Toggler.jsx';
 
 import './index.scss';
 
-// const App = () => <Color />;
+const App = () => <Toggler />;
 
 export default App;
