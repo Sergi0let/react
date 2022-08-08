@@ -16,17 +16,17 @@ export default class Colors extends React.Component {
       <div className="colors">
         <button
           onClick={() => this.setColorBody(RED)}
-          style={{ background: RED }}
+          style={{ backgroundColor: RED }}
           className="counter__button"
         ></button>
         <button
           onClick={() => this.setColorBody(GREEN)}
-          style={{ background: GREEN }}
+          style={{ backgroundColor: GREEN }}
           className="counter__button"
         ></button>
         <button
           onClick={() => this.setColorBody(BLUE)}
-          style={{ background: BLUE }}
+          style={{ backgroundColor: BLUE }}
           className="counter__button"
         ></button>
       </div>
