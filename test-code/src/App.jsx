@@ -1,8 +1,8 @@
 import React from 'react';
-import Counter from './Counter.jsx';
+import Colors from './Colors.jsx';
 
 import './index.scss';
 
-const App = () => <Counter />;
+const App = () => <Colors />;
 
 export default App;
