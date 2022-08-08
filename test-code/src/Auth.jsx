@@ -11,11 +11,12 @@ export default class Auth extends React.Component {
     };
   }
 
-  onLogout = () => {
-    this.setState({ isLoggedIn: false });
-  };
-  onLogin = () => {
+  handleLogin = () => {
     this.setState({ isLoggedIn: true });
+  };
+
+  handleLogout = () => {
+    this.setState({ isLoggedIn: false });
   };
 
   render() {
@@ -25,9 +26,9 @@ export default class Auth extends React.Component {
       <div className="panel">
         <Greeting isLoggedIn={isLoggedIn} />
         {isLoggedIn ? (
-          <Logout onLogout={this.onLogout} />
+          <Logout onLogout={this.handleLogout} />
         ) : (
-          <Login onLogin={this.onLogin} />
+          <Login onLogin={this.handleLogin} />
         )}
       </div>
     );
