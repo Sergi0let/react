@@ -8,12 +8,12 @@ const BLUE = 'blue';
 
 export default class Colors extends React.Component {
   setColorBody = (color) => {
-    document.body.style.background = color;
+    document.body.style.backgroundColor = color;
   };
 
   render() {
     return (
-      <>
+      <div className="colors">
         <button
           onClick={() => this.setColorBody(RED)}
           style={{ background: RED }}
@@ -29,7 +29,7 @@ export default class Colors extends React.Component {
           style={{ background: BLUE }}
           className="counter__button"
         ></button>
-      </>
+      </div>
     );
   }
 }
