@@ -12,6 +12,7 @@ export default class Page extends React.Component {
   setText = (text) => {
     this.setState({ text });
   };
+
   render() {
     return (
       <div className="page">
