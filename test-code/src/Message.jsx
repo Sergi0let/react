@@ -1,5 +1,8 @@
 import React from 'react';
 
-export default ({ text }) => (
-  <>{text && <div className="message">{text}</div>}</>
-);
+export default ({ text }) => {
+  if (!text) {
+    return null;
+  }
+  return <div className="message">{text}</div>;
+};
