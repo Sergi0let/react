@@ -1,6 +1,6 @@
 import React from 'react';
-import Auth from './Auth.jsx';
+import Mailbox from './Mailbox.jsx';
 
 import './index.scss';
 
-export default () => <Auth />;
+export default () => <Mailbox unreadMessages={[]} />;
