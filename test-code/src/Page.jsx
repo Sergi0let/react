@@ -1,34 +1,29 @@
 import React from 'react';
 import Message from './Message.jsx';
 
+const textFirst = 'Hello, world!';
+const textSecond = 'Another exciting text.';
+
 export default class Page extends React.Component {
   state = {
     text: null,
   };
 
-  handlerFirstBtn = () => {
-    this.setState({ text: 'Hello, world!' });
-  };
-
-  handlerSecondBtn = () => {
-    this.setState({ text: 'Another exciting text.' });
-  };
-
-  reset = () => {
-    this.setState({ text: null });
+  setText = (text) => {
+    this.setState({ text });
   };
   render() {
     return (
       <div className="page">
         <Message text={this.state.text} />
         <div className="actions">
-          <button onClick={this.handlerFirstBtn} className="btn">
+          <button onClick={() => this.setText(textFirst)} className="btn">
             Text 1
           </button>
-          <button onClick={this.handlerSecondBtn} className="btn">
+          <button onClick={() => this.setText(textSecond)} className="btn">
             Text 2
           </button>
-          <button onClick={this.reset} className="btn">
+          <button onClick={() => this.setText(null)} className="btn">
             Clear
           </button>
         </div>
