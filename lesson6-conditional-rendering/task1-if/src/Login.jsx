@@ -1,21 +1,7 @@
 import React from 'react';
-import Greeting from './Greeting.jsx';
 
-const Login = (props) => {
-  return (
-    <button className="btn login" onClick={props.onLogin}>
-      Login
-    </button>
-  );
-};
-
-// class Login extends React.Component {
-//   constructor(props){
-//     super(props);
-
-//     this.state = {
-//       onLogin:
-//     }
-//   }
-// }
-export default Login;
+export default ({ onLogin }) => (
+  <button className="btn login" onClick={onLogin}>
+    Login
+  </button>
+);
