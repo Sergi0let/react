@@ -12,6 +12,7 @@ export default class UsersList extends React.Component {
 
     this.setState({ sorting: newSorting });
   };
+
   render() {
     let usersList;
     if (this.state.sorting) {
