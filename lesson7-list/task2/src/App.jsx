@@ -23,6 +23,4 @@ const users = [
     name: 'Sam',
   },
 ];
-const App = () => <UsersList users={users} />;
-
-export default App;
+export default () => <UsersList users={users} />;

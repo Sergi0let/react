@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import User from './User.jsx';
 
-class UsersList extends Component {
+export default class UsersList extends Component {
   state = {
     sorting: null,
   };
@@ -41,4 +41,3 @@ class UsersList extends Component {
     );
   }
 }
-export default UsersList;

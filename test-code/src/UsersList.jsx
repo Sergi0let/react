@@ -14,6 +14,7 @@ export default class UsersList extends React.Component {
   };
 
   render() {
+    console.log(this.props.users);
     let usersList;
     if (this.state.sorting) {
       usersList = this.props.users
