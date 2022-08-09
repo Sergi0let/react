@@ -23,7 +23,7 @@ export default class Page extends React.Component {
           <button onClick={() => this.setText(textSecond)} className="btn">
             Text 2
           </button>
-          <button onClick={() => this.setText(null)} className="btn">
+          <button onClick={() => this.setText('')} className="btn">
             Clear
           </button>
         </div>
