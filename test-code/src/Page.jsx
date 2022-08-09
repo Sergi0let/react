@@ -17,6 +17,7 @@ export default class Page extends React.Component {
     return (
       <div className="page">
         <Message text={this.state.text} />
+        <div className="message">Hello, world!</div>
         <div className="actions">
           <button onClick={() => this.setText(textFirst)} className="btn">
             Text 1
