@@ -4,18 +4,7 @@ import ProductsList from './ProductsList.jsx';
 
 class ShoppingCart extends React.Component {
   state = {
-    cartItems: [
-      {
-        id: '1',
-        name: 'iPhone 11',
-        price: 999,
-      },
-      {
-        id: '2',
-        name: 'iPad Pro',
-        price: 799,
-      },
-    ],
+    cartItems: [],
   };
   render() {
     const count = this.state.cartItems.length;
