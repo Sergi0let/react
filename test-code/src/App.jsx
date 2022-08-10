@@ -4,7 +4,7 @@ import Profile from './Profile.jsx';
 
 import './index.scss';
 
-export default class App extends React.Component {
+class App extends React.Component {
   state = {
     userData: {
       firstName: 'John',
@@ -35,3 +35,4 @@ export default class App extends React.Component {
     );
   }
 }
+export default App;

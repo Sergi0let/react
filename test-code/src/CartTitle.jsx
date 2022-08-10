@@ -1,5 +1,7 @@
 import React from 'react';
 
-export default ({ userName, count }) => (
+const CartTitle = ({ userName, count }) => (
   <div className="cart-title">{`${userName}, you added ${count} items.`}</div>
 );
+
+export default CartTitle;
