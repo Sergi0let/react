@@ -1,39 +1,30 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
-const getTimeWithOffset = (offset) => {
-  const currentTime = new Date();
-  const utcOffset = currentTime.getTimezoneOffset() / 60;
-  return new Date(
-    currentTime.setHours(currentTime.getHours() + offset + utcOffset)
-  );
-};
+import getTimeWithOffset from './getTimeWithOffset.jsx';
 
-class Clock extends Component {
+export default class Clock extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      date: moment(getTimeWithOffset(props.offset)).format('h:mm:ss A'),
-      location: this.props.location,
       offset: props.offset,
+      date: moment(getTimeWithOffset(props.offset)).format('H:MM:SS A'),
     };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.clockId = setInterval(() => this.tickClock(), 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.clockId);
   }
 
-  tick() {
+  tickClock = () => {
     this.setState({
-      date: moment(getTimeWithOffset(this.state.offset)).format('h:mm:ss A'),
+      date: moment(getTimeWithOffset(this.state.offset)).format('H:MM:SS A'),
     });
-  }
-
+  };
   render() {
     return (
       <div className="clock">
@@ -43,5 +34,3 @@ class Clock extends Component {
     );
   }
 }
-
-export default Clock;

@@ -14,23 +14,24 @@ export default class Clock extends React.Component {
     super(props);
     this.state = {
       offset: props.offset,
-      date: moment(getTimeWithOffset(props.offset)).format('h:mm:ss A'),
+      date: moment(getTimeWithOffset(props.offset)).format('H:MM:SS A'),
     };
   }
 
   componentDidMount() {
-    this.timerId = setInterval(() => this.tick(), 1000);
+    this.clockId = setInterval(() => this.tick(), 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerId);
+    clearInterval(this.clockId);
   }
 
   tick = () => {
     this.setState({
-      date: moment(getTimeWithOffset(this.state.offset)).format('h:mm:ss A'),
+      date: moment(getTimeWithOffset(this.state.offset)).format('H:MM:SS A'),
     });
   };
+
   render() {
     return (
       <div className="clock">

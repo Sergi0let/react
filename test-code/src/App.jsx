@@ -7,15 +7,13 @@ export default class App extends React.Component {
   state = {
     visible: true,
   };
-
-  toggleHide = () => {
-    console.log('ggggg');
+  toggleClock = () => {
     this.setState({ visible: !this.state.visible });
   };
   render() {
     return (
       <>
-        <button onClick={this.toggleHide}>Hide</button>
+        <button onClick={this.toggleClock}>Hide/Show</button>
         {this.state.visible && (
           <>
             <Clock location="London" offset={0} />
