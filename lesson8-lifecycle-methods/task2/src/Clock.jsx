@@ -8,7 +8,7 @@ export default class Clock extends Component {
     super(props);
     this.state = {
       offset: props.offset,
-      date: moment(getTimeWithOffset(props.offset)).format('H:MM:SS A'),
+      date: moment(getTimeWithOffset(props.offset)).format('h:mm:ss A'),
     };
   }
 
@@ -22,9 +22,10 @@ export default class Clock extends Component {
 
   tickClock = () => {
     this.setState({
-      date: moment(getTimeWithOffset(this.state.offset)).format('H:MM:SS A'),
+      date: moment(getTimeWithOffset(this.state.offset)).format('h:mm:ss A'),
     });
   };
+
   render() {
     return (
       <div className="clock">
