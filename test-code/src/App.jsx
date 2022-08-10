@@ -1,27 +1,36 @@
 import React from 'react';
-import Clock from './Clock.jsx';
+import UserProfile from './UserProfile.jsx';
+import UserMenu from './UserMenu.jsx';
 
 import './index.scss';
 
 export default class App extends React.Component {
   state = {
-    visible: true,
+    userData: null,
   };
-  toggleClock = () => {
-    this.setState({ visible: !this.state.visible });
+
+  componentDidMount() {
+    this.fetchUser(this.props.userId);
+  }
+
+  fetchUser = (userId) => {
+    fetch(`https://api.github.com/users/${userId}`)
+      .then((response) => response.json())
+      .then((userData) => {
+        this.setState({
+          userData,
+        });
+      });
   };
+
   render() {
     return (
-      <>
-        <button onClick={this.toggleClock}>Hide/Show</button>
-        {this.state.visible && (
-          <>
-            <Clock location="London" offset={0} />
-            <Clock location="New York" offset={-5} />
-            <Clock location="Kiev" offset={2} />
-          </>
-        )}
-      </>
+      <div className="page">
+        <header className="header">
+          <UserMenu userData={this.state.userData} />
+        </header>
+        <UserProfile userData={this.state.userData} />
+      </div>
     );
   }
 }
