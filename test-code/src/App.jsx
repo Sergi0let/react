@@ -7,8 +7,8 @@ import './index.scss';
 export default class Page extends React.Component {
   state = {
     userData: {
-      firstName: 'Tom',
-      lastName: 'Form',
+      firstName: 'John',
+      lastName: 'Doe',
     },
   };
 
