@@ -15,6 +15,31 @@ export default class ShoppingCart extends React.Component {
         name: 'iPad Pro',
         price: 799,
       },
+      {
+        id: '2',
+        name: 'iPad Pro',
+        price: 799,
+      },
+      {
+        id: '2',
+        name: 'iPad Pro',
+        price: 799,
+      },
+      {
+        id: '2',
+        name: 'iPad Pro',
+        price: 799,
+      },
+      {
+        id: '2',
+        name: 'iPad Pro',
+        price: 799,
+      },
+      {
+        id: '2',
+        name: 'iPad Pro',
+        price: 799,
+      },
     ],
   };
   render() {
