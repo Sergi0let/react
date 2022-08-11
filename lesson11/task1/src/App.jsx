@@ -15,6 +15,10 @@ export default class App extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
   render() {
     return (
       <div className="app">
