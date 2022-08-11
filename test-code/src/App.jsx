@@ -1,30 +1,35 @@
 import React from 'react';
-import Numbers from './Numbers.jsx';
-import EvenNumbers from './EvenNumbers.jsx';
-import OddNumbers from './OddNumbers.jsx';
+// import PropTypes from 'prop-types';
+import Dialog from './Dialog.jsx';
+
 import './index.scss';
 
 export default class App extends React.Component {
   state = {
-    number: 0,
+    isOpen: false,
   };
 
-  componentDidMount() {
-    this.intervalId = setInterval(() => {
-      this.setState({ number: this.state.number + 1 });
-    }, 1000);
-  }
+  hideDialog = () => {
+    this.setState({ isOpen: false });
+  };
 
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
+  showDialog = () => {
+    this.setState({ isOpen: true });
+  };
+
   render() {
     return (
       <div className="app">
-        <OddNumbers title="Odd number" number={this.state.number} />
-        <EvenNumbers title="Even number" number={this.state.number} />
-        <Numbers title="All numbers" number={this.state.number} />
-        <Numbers />
+        <button onClick={this.showDialog} className="btn">
+          Show dialog
+        </button>
+        <Dialog
+          isOpen={this.state.isOpen}
+          onClose={this.hideDialog}
+          title="Some title"
+        >
+          <p>Some text</p>
+        </Dialog>
       </div>
     );
   }
