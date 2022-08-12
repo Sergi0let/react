@@ -15,7 +15,7 @@ class App extends React.Component {
       <div className="app">
         <Expand
           isOpen={this.state.isOpen}
-          title={this.state.isOpen && 'Some title'}
+          title="Some title"
           togglerHandler={this.togglerHandler}
         >
           <p>
