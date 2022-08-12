@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Expand = ({ isClose, children, title, togglerHandler }) => {
+  let content;
+  if (!isClose) {
+    content = null;
+  } else {
+    content = children;
+  }
   return (
     <div className="expand border">
       <div className="expand__header">
@@ -13,7 +19,7 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
           )}
         </button>
       </div>
-      <div className="expand__content">{isClose ? children : false}</div>
+      <div className="expand__content">{content}</div>
     </div>
   );
 };
