@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Expand = ({ isOpen, togglerHandler, children, title }) => {
+  let visibil;
+  if (isOpen) {
+    visibil = 'visible';
+  } else {
+    visibil = 'hidden';
+  }
   return (
     <div className="expand border">
       <div className="expand__header">
@@ -13,7 +19,9 @@ const Expand = ({ isOpen, togglerHandler, children, title }) => {
           )}
         </button>
       </div>
-      <div className="expand__content">{children}</div>
+      <div className="expand__content" style={{ visibility: visibil }}>
+        {children}
+      </div>
     </div>
   );
 };
