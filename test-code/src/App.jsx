@@ -3,14 +3,10 @@ import Expand from './Expand.jsx';
 
 import './index.scss';
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   state = {
     isClose: false,
   };
-
-  shouldComponentUpdate(nextState) {
-    return !nextState.isClose;
-  }
 
   togglerHandler = () => {
     this.setState({ isClose: !this.state.isClose });
