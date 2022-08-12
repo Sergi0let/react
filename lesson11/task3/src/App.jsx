@@ -2,12 +2,10 @@ import React from 'react';
 import Expand from './Expand.jsx';
 
 class App extends React.Component {
-  state = {
-    isOpen: false,
-  };
-
   componentDidMount() {
-    this.setState({ isOpen: false });
+    this.state = {
+      isOpen: false,
+    };
   }
   togglerHandler = () => {
     this.setState({ isOpen: !this.state.isOpen });
