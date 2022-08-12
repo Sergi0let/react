@@ -13,7 +13,7 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
           )}
         </button>
       </div>
-      <div className="expand__content">{isClose ? children : null}</div>
+      <div className="expand__content">{isClose ? children : false}</div>
     </div>
   );
 };
