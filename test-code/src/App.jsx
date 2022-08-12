@@ -9,7 +9,6 @@ export default class App extends React.Component {
   };
 
   togglerHandler = () => {
-    console.log(this.state.isClose);
     this.setState({ isClose: !this.state.isClose });
   };
 
