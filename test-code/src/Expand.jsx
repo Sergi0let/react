@@ -1,6 +1,6 @@
-import React, { Children } from 'react';
+import React from 'react';
 
-const Expand = ({ isClose, children, title, togglerHandler }) => {
+const Expand = ({ children, title, togglerHandler }) => {
   return (
     <div className="expand border">
       <div className="expand__header">
