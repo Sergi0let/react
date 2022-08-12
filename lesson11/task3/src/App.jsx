@@ -3,7 +3,7 @@ import Expand from './Expand.jsx';
 
 class App extends React.Component {
   state = {
-    isOpen: true,
+    isOpen: false,
   };
 
   componentDidMount() {
@@ -15,17 +15,13 @@ class App extends React.Component {
   };
 
   render() {
-    let content;
-    if (this.state.isOpen) {
-      content = (
-        <p>
-          Hooks are a new addition in React 16.8. They let you use state and
-          other React features without writing a class.
-        </p>
-      );
-    } else {
-      null;
-    }
+    let content = (
+      <p>
+        Hooks are a new addition in React 16.8. They let you use state and other
+        React features without writing a class.
+      </p>
+    );
+
     return (
       <div className="app">
         <Expand
@@ -33,7 +29,7 @@ class App extends React.Component {
           title="Some title"
           togglerHandler={this.togglerHandler}
         >
-          {content}
+          {this.state.isOpen && content}
         </Expand>
       </div>
     );
