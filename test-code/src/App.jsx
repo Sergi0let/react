@@ -5,7 +5,7 @@ import './index.scss';
 
 export default class App extends React.Component {
   state = {
-    isClose: false,
+    isClose: true,
   };
 
   togglerHandler = () => {
