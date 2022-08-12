@@ -6,6 +6,9 @@ class App extends React.Component {
     isOpen: false,
   };
 
+  componentDidMount() {
+    this.setState({ isOpen: false });
+  }
   togglerHandler = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
