@@ -6,14 +6,14 @@ const Expand = ({ isOpen, togglerHandler, children, title }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button onClick={togglerHandler} className="expand__toggle-btn">
-          {!isOpen ? (
+          {!children ? (
             <i className="fas fa-chevron-down"></i>
           ) : (
             <i className="fas fa-chevron-up"></i>
           )}
         </button>
       </div>
-      <div className="expand__content">{isOpen === true && children}</div>
+      <div className="expand__content">{children}</div>
     </div>
   );
 };
