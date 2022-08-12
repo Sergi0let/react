@@ -20,8 +20,9 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
 };
 Expand.propTypes = {
   title: PropTypes.string,
-  togglerHandler: PropTypes.func,
+  togglerHandler: PropTypes.func.isRequired,
   isClose: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 Expand.defaultProps = {
