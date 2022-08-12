@@ -1,5 +1,5 @@
 import React from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,9 +10,9 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
         <span className="expand__title">{title}</span>
         <button onClick={togglerHandler} className="expand__toggle-btn">
           {!isClose ? (
-            <FontAwesomeIcon icon={faChevronDown} />
+            <FontAwesomeIcon icon={faChevronDown} size="2x" />
           ) : (
-            <FontAwesomeIcon icon={faChevronUp} />
+            <FontAwesomeIcon icon={faChevronUp} size="2x" />
           )}
         </button>
       </div>
@@ -21,4 +21,3 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
   );
 };
 export default Expand;
-library.add(faChevronUp, faChevronDown);
