@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Expand = ({ isClose, children, title, togglerHandler }) => {
   return (
