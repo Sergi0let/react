@@ -3,12 +3,13 @@ import Expand from './Expand.jsx';
 
 class App extends React.Component {
   state = {
-    isOpen: false,
+    isOpen: true,
   };
 
   componentDidMount() {
     this.setState({ isOpen: false });
   }
+
   togglerHandler = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
