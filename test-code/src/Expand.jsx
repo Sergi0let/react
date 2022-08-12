@@ -14,7 +14,7 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
           )}
         </button>
       </div>
-      <div className="expand__content">{isClose && children}</div>
+      <div className="expand__content">{children}</div>
     </div>
   );
 };
@@ -22,10 +22,11 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
 Expand.propTypes = {
   title: PropTypes.string,
   isClose: PropTypes.bool.isRequired,
+  togglerHandler: PropTypes.func.isRequired,
 };
 
 Expand.defaultProps = {
-  isClose: false,
+  children: false,
   title: '',
 };
 export default Expand;
