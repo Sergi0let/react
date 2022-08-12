@@ -28,6 +28,7 @@ Expand.propTypes = {
 Expand.defaultProps = {
   children: false,
   title: '',
+  isOpen: false,
 };
 export default Expand;
 

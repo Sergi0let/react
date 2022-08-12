@@ -8,6 +8,9 @@ export default class App extends React.Component {
     isClose: false,
   };
 
+  componentDidMount() {
+    this.setState({ isClose: false });
+  }
   togglerHandler = () => {
     this.setState({ isClose: !this.state.isClose });
   };
