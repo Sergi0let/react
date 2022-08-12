@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Expand = ({ isOpen, togglerHandler, children, title }) => {
-  let visibil;
+  let visibil = 'hidden';
   if (isOpen) {
     visibil = 'visible';
   } else {
