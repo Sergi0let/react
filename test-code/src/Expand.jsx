@@ -7,9 +7,9 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
         <span className="expand__title">{title}</span>
         <button onClick={togglerHandler} className="expand__toggle-btn">
           {!isClose ? (
-            <i class="fas fa-chevron-down"></i>
+            <i className="fas fa-chevron-down"></i>
           ) : (
-            <i class="fas fa-chevron-up"></i>
+            <i className="fas fa-chevron-up"></i>
           )}
         </button>
       </div>
