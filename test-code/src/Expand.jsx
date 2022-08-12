@@ -21,6 +21,7 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
 
 Expand.propTypes = {
   title: PropTypes.string,
+  isClose: PropTypes.bool.isRequired,
 };
 
 Expand.defaultProps = {
