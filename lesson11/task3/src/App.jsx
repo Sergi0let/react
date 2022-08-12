@@ -15,13 +15,10 @@ class App extends React.Component {
   };
 
   render() {
-    let content = (
-      <p>
-        Hooks are a new addition in React 16.8. They let you use state and other
-        React features without writing a class.
-      </p>
-    );
-
+    let content = 'none';
+    if (this.state.isOpen) {
+      content = 'block';
+    }
     return (
       <div className="app">
         <Expand
@@ -29,7 +26,10 @@ class App extends React.Component {
           title="Some title"
           togglerHandler={this.togglerHandler}
         >
-          {this.state.isOpen && content}
+          <p style={{ display: content }}>
+            Hooks are a new addition in React 16.8. They let you use state and
+            other React features without writing a class.
+          </p>
         </Expand>
       </div>
     );
