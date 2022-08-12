@@ -1,31 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Expand = ({ children, title, togglerHandler }) => {
+const Expand = ({ isClose, children, title, togglerHandler }) => {
   return (
     <div className="expand border">
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button onClick={togglerHandler} className="expand__toggle-btn">
-          {!children ? (
+          {isClose ? (
             <i className="fas fa-chevron-down"></i>
           ) : (
             <i className="fas fa-chevron-up"></i>
           )}
         </button>
       </div>
-      <div className="expand__content">{children}</div>
+      <div className="expand__content">{isClose && children}</div>
     </div>
   );
 };
 Expand.propTypes = {
   title: PropTypes.string,
   togglerHandler: PropTypes.func,
+  isClose: PropTypes.bool.isRequired,
 };
 
 Expand.defaultProps = {
   title: '',
-  children: false,
+  isClose: false,
 };
 export default Expand;
 

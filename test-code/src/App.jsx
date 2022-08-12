@@ -20,12 +20,10 @@ export default class App extends React.Component {
           togglerHandler={this.togglerHandler}
           title="Some title"
         >
-          {this.state.isClose && (
-            <p>
-              Hooks are a new addition in React 16.8. They let you use state and
-              other React features without writing a class.
-            </p>
-          )}
+          <p>
+            Hooks are a new addition in React 16.8. They let you use state and
+            other React features without writing a class.
+          </p>
         </Expand>
       </div>
     );
