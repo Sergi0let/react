@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 
 const Expand = ({ isClose, children, title, togglerHandler }) => {
   return (
@@ -6,14 +6,14 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button onClick={togglerHandler} className="expand__toggle-btn">
-          {!isClose ? (
+          {children ? (
             <i className="fas fa-chevron-down"></i>
           ) : (
             <i className="fas fa-chevron-up"></i>
           )}
         </button>
       </div>
-      <div className="expand__content">{isClose && children}</div>
+      <div className="expand__content">{children}</div>
     </div>
   );
 };
