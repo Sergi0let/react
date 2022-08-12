@@ -2,10 +2,12 @@ import React from 'react';
 import Expand from './Expand.jsx';
 
 class App extends React.Component {
+  state = {
+    isOpen: false,
+  };
+
   componentDidMount() {
-    this.state = {
-      isOpen: false,
-    };
+    this.setState({ isOpen: false });
   }
   togglerHandler = () => {
     this.setState({ isOpen: !this.state.isOpen });
@@ -19,10 +21,12 @@ class App extends React.Component {
           title="Some title"
           togglerHandler={this.togglerHandler}
         >
-          <p>
-            Hooks are a new addition in React 16.8. They let you use state and
-            other React features without writing a class.
-          </p>
+          {this.state.isOpen && (
+            <p>
+              Hooks are a new addition in React 16.8. They let you use state and
+              other React features without writing a class.
+            </p>
+          )}
         </Expand>
       </div>
     );
