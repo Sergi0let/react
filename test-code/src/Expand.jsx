@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Expand = ({ isClose, children, title, togglerHandler }) => {
   return (
@@ -19,17 +18,6 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
   );
 };
 
-Expand.propTypes = {
-  title: PropTypes.string,
-  isClose: PropTypes.bool.isRequired,
-  togglerHandler: PropTypes.func.isRequired,
-};
-
-Expand.defaultProps = {
-  children: false,
-  title: '',
-  isOpen: false,
-};
 export default Expand;
 
 // підключення через Компоненту
