@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Expand = ({ isClose, children, title, togglerHandler }) => {
   return (
@@ -16,6 +17,15 @@ const Expand = ({ isClose, children, title, togglerHandler }) => {
       <div className="expand__content">{children}</div>
     </div>
   );
+};
+
+Expand.propTypes = {
+  title: PropTypes.string,
+};
+
+Expand.defaultProps = {
+  isOpen: false,
+  title: '',
 };
 export default Expand;
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Expand from './Expand.jsx';
 
+import PropTypes from 'prop-types';
+
 import './index.scss';
 
 export default class App extends React.Component {
@@ -20,7 +22,7 @@ export default class App extends React.Component {
           togglerHandler={this.togglerHandler}
           title="Some title"
         >
-          {this.state.isClose && (
+          {!this.state.isClose && (
             <p>
               Hooks are a new addition in React 16.8. They let you use state and
               other React features without writing a class.
