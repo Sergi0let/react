@@ -1,31 +1,11 @@
 import React from 'react';
-import Expand from './Expand.jsx';
+
+import TodoList from './TodoList.jsx';
 
 import './index.scss';
 
-export default class App extends React.PureComponent {
-  state = {
-    isClose: false,
-  };
+const App = () => {
+  return <TodoList />;
+};
 
-  togglerHandler = () => {
-    this.setState({ isClose: !this.state.isClose });
-  };
-
-  render() {
-    return (
-      <div className="app">
-        <Expand
-          isClose={this.state.isClose}
-          togglerHandler={this.togglerHandler}
-          title="Some title"
-        >
-          <p>
-            Hooks are a new addition in React 16.8. They let you use state and
-            other React features without writing a class.
-          </p>
-        </Expand>
-      </div>
-    );
-  }
-}
+export default App;
