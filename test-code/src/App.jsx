@@ -1,11 +1,9 @@
 import React from 'react';
-
-import TodoList from './TodoList.jsx';
-
+import Counter from './Counter.jsx';
 import './index.scss';
 
 const App = () => {
-  return <TodoList />;
+  return <Counter />;
 };
 
 export default App;
