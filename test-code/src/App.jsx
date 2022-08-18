@@ -1,8 +1,9 @@
 import React from 'react';
-import Dimensions from './Dimensions.jsx';
 
-const App = () => {
-  return <Dimensions />;
-};
+import ConnectionStatus from './ConnectionStatus.jsx';
+
+import './index.scss';
+
+const App = () => <ConnectionStatus />;
 
 export default App;
