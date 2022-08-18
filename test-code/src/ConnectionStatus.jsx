@@ -16,7 +16,7 @@ const ConnectionStatus = () => {
 
     return () =>
       window.removeEventListener('online', onConnectionChange) &&
-      window.addEventListener('offline', onConnectionChange);
+      window.removeEventListener('offline', onConnectionChange);
   });
 
   if (status === 'online') {
