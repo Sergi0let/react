@@ -11,13 +11,18 @@ const ConnectionStatus = () => {
       setStatus({ status: event.type });
       console.log(event.type);
     };
-    window.addEventListener('online', onConnectionChange);
     window.addEventListener('offline', onConnectionChange);
 
-    return (
-      () => window.removeEventListener('online', onConnectionChange),
-      () => window.removeEventListener('offline', onConnectionChange)
-    );
+    return () => window.removeEventListener('offline', onConnectionChange);
+  });
+
+  useEffect(() => {
+    const onConnectionChange = (event) => {
+      setStatus({ status: event.type });
+      console.log(event.type);
+    };
+    window.addEventListener('online', onConnectionChange);
+    return () => window.removeEventListener('online', onConnectionChange);
   });
 
   if (status === 'online') {
