@@ -19,6 +19,8 @@ const Dimensions = () => {
     };
 
     window.addEventListener('resize', handleResize);
+
+    return () => removeEventListener('resize', handleResize);
   }, []);
 
   const { width, height } = demensions;
