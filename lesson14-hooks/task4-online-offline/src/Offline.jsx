@@ -1,3 +1,6 @@
 import React from 'react';
 
-export default () => <div className="status status_offline">Offline</div>;
+const Offline = () => {
+  return <div className="status status_offline">Offline</div>;
+};
+export default Offline;

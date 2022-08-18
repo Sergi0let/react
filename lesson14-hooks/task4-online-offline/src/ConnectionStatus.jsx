@@ -6,18 +6,20 @@ import Online from './Online.jsx';
 const ConnectionStatus = () => {
   const [status, setStatus] = useState('online');
 
-  const onConnectionChange = (e) => {
-    setStatus({ status: e.type });
-  };
-
   useEffect(() => {
+    const onConnectionChange = (e) => {
+      setStatus({ status: e.type });
+    };
     window.addEventListener('offline', onConnectionChange);
     return () => window.removeEventListener('offline', onConnectionChange);
   });
 
   useEffect(() => {
+    const onConnectionChange = (e) => {
+      setStatus({ status: e.type });
+    };
     window.addEventListener('online', onConnectionChange);
-    return window.removeEventListener('online', onConnectionChange);
+    return () => window.removeEventListener('online', onConnectionChange);
   });
 
   if (status === 'online') {

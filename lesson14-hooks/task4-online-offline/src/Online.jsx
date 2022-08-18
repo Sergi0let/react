@@ -1,3 +1,4 @@
 import React from 'react';
 
-export default () => <div className="status">Offline</div>;
+const Online = () => <div className="status">Online</div>;
+export default Online;
