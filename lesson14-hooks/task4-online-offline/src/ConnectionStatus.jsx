@@ -8,7 +8,6 @@ const ConnectionStatus = () => {
 
   const onConnectionChange = (e) => {
     setStatus({ status: e.type });
-    console.log(e.type);
   };
 
   useEffect(() => {
