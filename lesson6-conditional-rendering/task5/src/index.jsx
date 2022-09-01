@@ -5,6 +5,4 @@ import Auth from './Auth.jsx';
 
 import './index.scss';
 
-const rootElement = document.querySelector('#root');
-
-ReactDOM.render(<Auth />, rootElement);
+ReactDOM.render(<Auth />, document.getElementById('root'));
