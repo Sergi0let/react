@@ -7,7 +7,8 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  const isPrevPageAvailable = currentPage > 1;
+  const listStartPageRender = 1;
+  const isPrevPageAvailable = currentPage > listStartPageRender;
   const isNextPageAvailable = totalItems / itemsPerPage > currentPage;
 
   return (
