@@ -1,66 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
-class UsersList extends React.Component {
+import { users } from './data.js';
+
+class UsersList extends Component {
   state = {
-    usersList: [
-      {
-        id: 'id-0',
-        age: 21,
-        name: 'Bob',
-      },
-      {
-        id: 'id-1',
-        age: 17,
-        name: 'Tom',
-      },
-      {
-        id: 'id-2',
-        age: 18,
-        name: 'Tad',
-      },
-      {
-        id: 'id-3',
-        age: 45,
-        name: 'Justin',
-      },
-      {
-        id: 'id-4',
-        age: 45,
-        name: 'Franklin',
-      },
-      {
-        id: 'id-5',
-        age: 45,
-        name: 'John',
-      },
-      {
-        id: 'id-6',
-        age: 45,
-        name: 'Andrew',
-      },
-      {
-        id: 'id-7',
-        age: 45,
-        name: 'Pol',
-      },
-      {
-        id: 'id-8',
-        age: 45,
-        name: 'Ron',
-      },
-      {
-        id: 'id-9',
-        age: 45,
-        name: 'Harry',
-      },
-      {
-        id: 'id-10',
-        age: 45,
-        name: 'Anna',
-      },
-    ],
+    usersList: users,
     currentPage: 1,
     itemsPerPage: 3,
   };
@@ -73,11 +20,10 @@ class UsersList extends React.Component {
     this.setState({ currentPage: this.state.currentPage + 1 });
   };
   render() {
-    const lastUserIndex = this.state.currentPage * this.state.itemsPerPage;
-    const firstUserIndex = lastUserIndex - this.state.itemsPerPage;
-    const currentUsers = this.state.usersList.slice(
-      firstUserIndex,
-      lastUserIndex
+    const lastListIndex = this.state.currentPage * this.state.itemsPerPage;
+    const currentUsersList = this.state.usersList.slice(
+      lastListIndex - this.state.itemsPerPage,
+      lastListIndex
     );
 
     return (
@@ -90,7 +36,7 @@ class UsersList extends React.Component {
           itemsPerPage={this.state.itemsPerPage}
         />
         <ul className="users">
-          {currentUsers.map((user) => (
+          {currentUsersList.map((user) => (
             <User key={user.id} {...user} />
           ))}
         </ul>
