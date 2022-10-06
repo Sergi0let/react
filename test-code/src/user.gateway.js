@@ -6,5 +6,6 @@ export const getUserData = (userId) =>
       if (response.ok) {
         return response.json();
       }
+      throw new Error('Not fetch connect');
     })
     .then((userData) => userData);
