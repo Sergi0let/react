@@ -19,12 +19,8 @@ const App = () => {
           </li>
         </ul>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/users" component={Users} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -4,8 +4,9 @@ import { Route, Link, Switch } from 'react-router-dom';
 import User from './User.jsx';
 import { getUserData } from './user.gateway.js';
 
-export default function Users() {
+export default function Users({ match }) {
   const [userInfo, setUserInfo] = useState([]);
+  const { path } = match;
 
   const fetchUserData = (userId) =>
     getUserData(userId).then((userData) => setUserInfo(userData));
@@ -15,12 +16,15 @@ export default function Users() {
       <h1>Users</h1>
       <ul className="navigation">
         <li className="navigation__item">
-          <Link to="/users/github" onClick={() => fetchUserData('github')}>
+          <Link to={`${path}/github`} onClick={() => fetchUserData('github')}>
             Github
           </Link>
         </li>
         <li className="navigation__item">
-          <Link to="/users/facebook" onClick={() => fetchUserData('facebook')}>
+          <Link
+            to={`${path}/facebook`}
+            onClick={() => fetchUserData('facebook')}
+          >
             Facebook
           </Link>
         </li>
