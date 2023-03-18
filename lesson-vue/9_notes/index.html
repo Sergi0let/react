@@ -25,8 +25,29 @@
         </form>
 
         <div class="notes">
-          <div class="note" v-for="(note, index) in notes" :key="index">
-            <p>{{note}} - index: {{index}}</p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+            class="note"
+            v-for="(note, index) in notes"
+            :key="index"
+          >
+            <p @click="changeInputValue(index)" v-if="input.index !== index">
+              {{note}} - index: {{index}}
+            </p>
+
+            <form @submit.prevent="updateNote">
+              <input
+                v-if="input.index === index"
+                type="text"
+                v-model="input.value"
+                :placeholder="input.placeholder"
+              />
+            </form>
+            <span @click="remove(index)">&#10005;</span>
           </div>
         </div>
       </div>
