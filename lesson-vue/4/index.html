@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#6 - vmodel directive</title>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="app">
+        <input type="text" :value="title" />
+        <input type="text" :value="imgUrl" />
+
+        <br />
+        <!-- :src="imgUrl" - bind with data new style -->
+        <!-- v-bind:src="imgUrl" - bind with data old style -->
+        <img
+          @click="changeImg"
+          v-bind:src="imgUrl"
+          :alt="title"
+          :title="title"
+        />
+      </div>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            title: 'alien',
+            imgUrl: './images/1.jpg',
+          };
+        },
+
+        methods: {
+          changeImg() {
+            const images = ['./images/1.jpg', './images/2.jpg'];
+            this.imgUrl = images[Math.floor(Math.random() * images.length)];
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+    </script>
+  </body>
+</html>

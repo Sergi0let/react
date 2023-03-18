@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#1 - Vue Init; Work with data.</title>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="app">
+        <!-- message -->
+        {{message}}
+
+        <div class="app__up">{{priority.title}} - {{priority.value}}</div>
+
+        <br />
+
+        <div class="app__down">
+          <button v-if="priority.value > 0" @click="down">
+            {{buttons.prev.title}}
+          </button>
+
+          <br />
+
+          <button @click="up">{{buttons.next.title}}</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            priority: {
+              title: 'Title',
+              value: 0,
+            },
+            buttons: {
+              prev: {
+                title: 'Down',
+                icon: '',
+                classes: '',
+              },
+              next: {
+                title: 'Up',
+              },
+            },
+          };
+        },
+
+        methods: {
+          down() {
+            this.priority.value -= 1;
+          },
+          up() {
+            this.priority.value += 1;
+          },
+        },
+
+        computed: {
+          message() {
+            const messages = {
+              welcom: 'Make some Vote',
+              save: 'Saved',
+            };
+            return this.priority.value > 0 ? messages.save : messages.welcom;
+          },
+        }, // computed properties - like methods but return value
+      };
+
+      Vue.createApp(App).mount('#app');
+
+      console.log('Vue', Vue); // Vue {version: "3.2.20"}
+    </script>
+  </body>
+</html>

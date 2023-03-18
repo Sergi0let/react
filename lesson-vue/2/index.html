@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#1 - Vue Init; Work with data.</title>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <h1>Hello first lesson Vue</h1>
+
+    <div class="wrapper">
+      <div id="app">
+        <div class="app__up">{{priority.title}} - {{priority.value}}</div>
+
+        <br />
+
+        <!-- message -->
+        <div>
+          <p v-if="priority.value === 3">priority === 3</p>
+          <p v-else-if="priority.value === 1 || priority.value ===2">
+            priority == 2 || priority == 1
+          </p>
+          <p v-else>priority != 3</p>
+        </div>
+
+        <div class="app__down">
+          <!-- v-if="priority.value > 0" - if priority.value > 0 then show button -->
+          <button v-if="priority.value > 0" @click="down">
+            {{buttons.prev.title}}
+          </button>
+
+          <br />
+
+          <button @click="up">{{buttons.next.title}}</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            priority: {
+              title: 'Title',
+              value: 0,
+            },
+            buttons: {
+              prev: {
+                title: 'Down',
+                icon: '',
+                classes: '',
+              },
+              next: {
+                title: 'Up',
+              },
+            },
+          };
+        },
+
+        methods: {
+          down() {
+            this.priority.value -= 1;
+          },
+          up() {
+            this.priority.value += 1;
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+
+      console.log('Vue', Vue); // Vue {version: "3.2.20"}
+    </script>
+  </body>
+</html>

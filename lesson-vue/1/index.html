@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#1 - Vue Init; Work with data.</title>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <h1>Hello first lesson Vue</h1>
+
+    <div class="wrapper">
+      <div id="app">
+        <!-- vue start -->
+
+        <div class="app__up">{{priority.title}} - {{priority.value}}</div>
+        <br /><br />
+        <div class="app__down">
+          <!-- v-on:click="down" - old syntax -->
+          <button v-on:click="down">{{buttons.prev.title}}</button>
+
+          <!-- @click="up" - new syntax -->
+          <button @click="up">{{buttons.next.title}}</button>
+        </div>
+
+        <!-- vue end -->
+      </div>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            priority: {
+              title: 'Title',
+              value: 0,
+            },
+            buttons: {
+              prev: {
+                title: 'Down',
+                icon: '',
+                classes: '',
+              },
+              next: {
+                title: 'Up',
+              },
+            },
+          };
+        },
+
+        methods: {
+          down() {
+            this.priority.value -= 1;
+          },
+          up() {
+            this.priority.value += 1;
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+
+      console.log('Vue', Vue); // Vue {version: "3.2.20"}
+    </script>
+  </body>
+</html>
