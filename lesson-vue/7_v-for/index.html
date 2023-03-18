@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#7 - v-for</title>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- v-for  can dinamic bind data and UI -->
+      <div id="app">
+        {{names}}
+
+        <ul>
+          <li v-for="name in names">{{name}}</li>
+        </ul>
+        <button @click="addNewItem">Submit Name in Array</button>
+
+        <hr />
+        <br />
+
+        {{people}}}
+        <ul>
+          <!-- <li v-for="name in names" :key="name">{{ name }}</li> -->
+
+          <li v-for="person in people" key="person['id']">
+            <h2>{{person['id']}}</h2>
+            <p>{{person['name']}} - {{person['age']}}</p>
+            <p>Gender: {{person['male'] ? 'male' : 'female'}}</p>
+          </li>
+        </ul>
+
+        <button @click="addNewItem2">Submit Object</button>
+      </div>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            names: ['John', 'Jane', 'Jack', 'Jill', 'Jenny', 'Jenifer'],
+            people: [
+              { id: 1, name: 'John', age: 25, male: true },
+              { id: 2, name: 'Jane', age: 30, male: false },
+              { id: 3, name: 'Bob', age: 35, male: true },
+              { id: 4, name: 'Mary', age: 40, male: false },
+            ],
+          };
+        },
+        methods: {
+          addNewItem() {
+            const randomName = Math.random().toString(36).substring(7);
+            this.names.push(randomName);
+            console.log(this.names);
+          },
+          addNewItem2() {
+            const data = {
+              id: this.people.length + 1,
+              name: Math.random().toString(36).substring(7),
+              age: Math.floor(Math.random() * 100),
+              male: Math.random() >= 0.5,
+            };
+
+            this.people.push(data);
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+    </script>
+  </body>
+</html>
