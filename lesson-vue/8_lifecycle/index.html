@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 Lifecycle methods</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <h1>Lifecycle</h1>
+    <div id="app">
+      <p>{{ paragraph }}</p>
+    </div>
+
+    <script>
+      const App = {
+        data() {
+          return {
+            paragraph: 'Lorem ipsum dolor sit amet consectetur',
+          };
+        },
+        beforeCreate() {
+          // this.test(); // error  this is undefined here  because this is not created yet
+        },
+
+        created() {
+          this.test();
+          // console.log(Date.now() + '    created');
+        },
+        mounted() {
+          console.log(Date.now() + '    mounted');
+        },
+
+        methods: {
+          test() {
+            console.log(123);
+          },
+        },
+      };
+
+      Vue.createApp(App).mount('#app');
+    </script>
+  </body>
+</html>
