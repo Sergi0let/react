@@ -4,25 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>#6 - Bind.</title>
+    <title>#6 - v-model .</title>
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div class="wrapper">
       <div id="app">
-        <input type="text" :value="title" />
-        <input type="text" :value="imgUrl" />
+        <!-- v-model  can dinamic bind data and UI -->
+        <input type="checkbox" v-model="show" />
+        <input type="text" v-model="title" />
+        <input type="text" v-model="imgUrl" />
 
         <br />
-        <!-- :src="imgUrl" - bind with data new style -->
-        <!-- v-bind:src="imgUrl" - bind with data old style -->
-        <img
-          @click="changeImg"
-          v-bind:src="imgUrl"
-          :alt="title"
-          :title="title"
-        />
+
+        <div v-if="show" class="img__wrapper">
+          <img
+            @click="changeImg"
+            v-bind:src="imgUrl"
+            :alt="title"
+            :title="title"
+          />
+        </div>
       </div>
     </div>
 
@@ -32,6 +35,7 @@
           return {
             title: 'alien',
             imgUrl: './images/1.jpg',
+            show: true,
           };
         },
 
