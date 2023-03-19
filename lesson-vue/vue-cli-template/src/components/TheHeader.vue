@@ -14,24 +14,14 @@
 </template>
 
 <script>
+import { app, links } from '@/_config';
+
 export default {
-  props: {
-    title: {
-      type: String,
-      required: true,
-      default: 'default title',
-    },
-    links: {
-      type: Array,
-      required: true,
-      default: () => [
-        {
-          title: 'Home',
-          alias: 'home',
-          url: '/',
-        },
-      ],
-    },
+  data() {
+    return {
+      title: app.title,
+      links,
+    };
   },
 };
 </script>

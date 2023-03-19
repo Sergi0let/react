@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header :title="title" :links="links" />
+    <Header />
 
     <div class="wrapper-content">
       <div class="container">
@@ -11,10 +11,13 @@
           officiis dicta harum deserunt eveniet corrupti minus quasi eaque nisi
           veritatis non.
         </p>
+
+        <!-- about -->
+        We have a vacancy see <a href="/vacancy">here</a>
       </div>
     </div>
 
-    <Footer :links="links" />
+    <Footer />
   </div>
 </template>
 
@@ -25,24 +28,6 @@ import TheFooter from '@/components/TheFooter.vue';
 export default {
   name: 'App',
   components: { Header: TheHeader, Footer: TheFooter },
-
-  data() {
-    return {
-      title: 'Template',
-      links: [
-        {
-          title: 'Home',
-          alias: 'home',
-          url: '/',
-        },
-        {
-          title: 'About',
-          alias: 'about',
-          url: '/about',
-        },
-      ],
-    };
-  },
 };
 </script>
 
