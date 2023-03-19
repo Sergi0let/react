@@ -1,7 +1,3 @@
-const test = 'hello world from config';
-
-export default test;
-
 export const process = {
   dev: true,
 };
