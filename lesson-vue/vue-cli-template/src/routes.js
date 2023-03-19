@@ -7,22 +7,27 @@ import {
 // const routerHistory = createWebHistory();
 const routerHash = createWebHashHistory();
 
-import HomePage from './pages/homePage.vue';
-import AboutPage from './pages/aboutPage.vue';
+import HomePage from './pages/homePage';
+import AboutPage from './pages/aboutPage';
+import notFound from './pages/notFound';
 
 const routers = createRouter({
   history: routerHash,
-
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: HomePage,
     },
     {
       path: '/about',
-      name: 'About',
+      name: 'about',
       component: AboutPage,
+    },
+    {
+      path: '/:CatchAll(.*)*', // 404  Not Found
+      name: '404',
+      component: notFound,
     },
   ],
 });
